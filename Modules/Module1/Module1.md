@@ -203,14 +203,17 @@ What is the difference between Git and GitHub?
 What is the difference between a git commit and a git push?
 
  - Answer:
+ Git commit is like a "save" and a git push is like "save to cloud"
 
 What is the difference between a pull, and an upstream pull?
 
- - Answer:
+ - Answer: 
+ A pull is when we edit the code from the teacher an upstream pull is editing another students upload.
 
 What part of these instructions was unclear or incomplete?
 
  - Answer:
+ I understood all of them
 
 Type down any class notes below this sentence:
 
