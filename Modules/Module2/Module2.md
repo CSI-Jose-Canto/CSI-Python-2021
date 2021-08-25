@@ -131,23 +131,27 @@ Typing `python` *(or `python3`)* into the terminal will enter the Python console
 What is a benefit of using Markdown?
 https://www.markdownguide.org/getting-started/
 
- - Answer:
-
+ - Answer: 
+write an easy-to-read, easy-to-write plain text format, and optionally convert it to structurally valid XHTML (or HTML)
 What does "cd" stand for?
 
  - Answer:
+ will take you back to the directory
 
 Did you get stuck at any point or become confused with your console? (yes/no) If so, what happened? How did you solve it?
 
  - Answer:
+ no. 
 
 Did you consider searching google for other commands to run? What did you try? 
 
  - Answer:
+ No.
 
 What would you like to program? 
 
  - Answer:
+ An APP
 
 Type down any class notes below this sentence:
 
