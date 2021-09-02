@@ -96,24 +96,29 @@ print(type(age))
 
 What is the difference between "42" and 42.
 
- - Answer:
+ - Answer: When it is "42" it will print as a text, it cant be used like 42 for math.
 
 Define the boolean operators: >, <, ==, >=, <=
 
- - Answer:
+ - Answer: These booleans are: 
+ greater than ( a = 1, b = 2, b > a)
+ less than ( a = 1, b = 2, a < b)
+ equal to ( a = 3, b = 1+2, a == b)
+ equal or greater than ( a = 1, b = 2, b >= a)
+ equal or lesser than ( a = 1, b = 2, a <= b)
 
 How do you address an index in an list? Write a python code that assigns 34 to a new variable by accessing the value stored in:  
         arr = [4, 3, -1, 4, 34]
 
- - Answer:
+ - Answer: myArr:int = arr[4]
 
 What is the first index of a list? Why?
 
- - Answer:
+ - Answer: The first index is 0. In code everything starts at 0-1-2-3
 
 Provide an original example of a null value. It must prove your understanding of the concept.
 
- - Answer:
+ - Answer: How many people own an iphone. The exact number can be determined but as of right now the answere is unknown
 
 Type down any class notes below this sentence:
 
