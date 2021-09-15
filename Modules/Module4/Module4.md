@@ -135,20 +135,26 @@ Evaluate the following code. Is the code written correctly? What would be the co
         print('This message has a syntax error!")
         print(Churrigueresco)
 
- - Answer:
+ - Answer: The print should have "". print("This message has a syntax error!") The object "Churrigueresco" is not defined.
 
 Evaluate the following code. Is the code written correctly? What would be the correct code?
         someNumber=360
         print(' The Number is someNumber ')
 Expected:  The Number is 360
 
- - Answer:
+ - Answer: The object is written as text instead of as a variable. Correct way is: someNumber = 360
+        print(f"The Number is {someNumber}")
 
 Define a function that takes 2 or more string parameters and prints a single line using them as part of a functional string. The function may do anything you chose but the function name and parameter names must be representative of what they are.
 
- - Answer:
-  
+ - Answer: def bDay(age, place):
+           
+                print(f"The boy is {age}, we will get the cake from {place}.")
 
+                bDay(age, place)
+                
+  
+def greetStudent(name):
 
 Refer to this documentation webpage and google for the exercises below:
 https://www.w3schools.com/python/python_ref_string.asp
