@@ -150,11 +150,11 @@ Define a function that takes 2 or more string parameters and prints a single lin
  - Answer: def bDay(age, place):
            
                 print(f"The boy is {age}, we will get the cake from {place}.")
-
+                
+                age = "ten"
+                place = "Ben and Jerrys"
                 bDay(age, place)
                 
-  
-def greetStudent(name):
 
 Refer to this documentation webpage and google for the exercises below:
 https://www.w3schools.com/python/python_ref_string.asp
@@ -165,7 +165,9 @@ Which code returns the length of the string s0:
 
 s0 = "What is my length? Store it as a number in a variable."
 
- - Answer:
+ - Answer: 
+                length = (len(s0))
+                print(length)
 
 How do you create a substring in python?
 Create a substring of s1 containing only my name. Store it in a variable called ss1.
@@ -173,11 +175,11 @@ https://www.freecodecamp.org/news/how-to-substring-a-string-in-python/
 
 s1 = "Hello Student! My name is Carlos Jose Cobián. I enjoy coding and video games!"
 
- - Answer: ss1 =
+ - Answer: ss1 = print(s1[26:44])
 
 Capitalize every letter of ss1 using a function. Store it in a variable called SS1.
 
- - Answer: SS1 =
+ - Answer: SS1 = SS1 = ss1.upper()
 
 
 This last section is not worth any points, but is worth looking into. It is good string manipulation practice and contains exercises that you may see in a pop quiz! 
