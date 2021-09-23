@@ -71,9 +71,12 @@ print(f"Computer selected: {computerChoice}")
 Give a python example for each logic operator in the module image.
 
  - Answers:
-   - OR:
-   - AND: 
-   - NOT: 
+   - OR: if(x == 9 or x > 9)
+            print("x greater than 8 to 9")
+   - AND: If(x == 9 and x > 9)
+            print("x is equal to or greater than 9")
+   - NOT: if(x==9 not x==10)
+            print("x is 9")
 
 
 Type down any class notes below this sentence:
