@@ -72,16 +72,17 @@ Give a python example for each logic operator in the module image.
 
  - Answers:
    - OR: if(x == 9 or x > 9)
-            print("x greater than 8 to 9")
-   - AND: If(x == 9 and x > 9)
-            print("x is equal to or greater than 9")
-   - NOT: if(x==9 not x==10)
-            print("x is 9")
+            print("x greater than 9 or is 9") x is either 9 or greater than 9
+   - AND: if(x == 9 and x > 9)
+            print("x is equal to or greater than 9") x is equal and greater than 9
+   - NOT: if(x>=9 and (not x>=10))
+            print("x is 9") x has to be 9 because it is euql to or greater than 9 but cant be 10 or greater
+
 
 
 Type down any class notes below this sentence:
 
-
+NONE
 
 Lackluster responses may result in point deductions.
 -->
