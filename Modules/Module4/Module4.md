@@ -38,7 +38,7 @@ It may be called from anywhere its been initialized by typing the function name.
 
 <br>
 
-### Functional Parameters
+### rameters
 
 A function may receive one or multiple parameters
 
