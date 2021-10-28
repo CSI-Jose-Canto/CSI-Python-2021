@@ -24,4 +24,4 @@ class ExperimentalData:
         #Set each plannet's force of gravity
     
     def run(self):
-        print(f"The gun is the {self.gun}. The cartridge is the {self.cartridge} and its ammunition type is {self.ammunitionType}. The velocity of the the bullet is {self.velocity}m/s. If I shoot from the top of {self.buildingName} and its height is {self.buildingHeight}m. Taking in to consideration that there isnt any air resistance and the height of the building, the time traveled is {self.getTime()}s and the distance traveled would be {self.getDistance()}m")
+        print(f"The gun is the {self.gun}. The cartridge is the {self.cartridge} and its ammunition type is {self.ammunitionType}. The velocity of the the bullet is {self.velocity}m/s. If I shoot from the top of {self.buildingName} and its height is {self.buildingHeight}m, and it is being shot from {self.planet}. Taking in to consideration that there isnt any air resistance and the height of the building, the time traveled is {self.getTime()}s and the distance traveled would be {self.getDistance()}m")
