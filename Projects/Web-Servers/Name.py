@@ -1,5 +1,5 @@
-class RandomName:
-    def __init__(self, id: int, uid: str, name: str, two_word_name: float, four_word_name: str, name_with_initials: str, name_with_middle: str, first_name: str, middle_name: str, last_name: str, male_first_name: str, female_first_name: str, prefix: str, initials: str):
+class Name:
+    def __init__(self, id: int, uid: str, name: str, two_word_name: str, four_word_name: str, name_with_initials: str, name_with_middle: str, first_name: str, middle_name: str, last_name: str, male_first_name: str, female_first_name: str, prefix: str, initials: str):
         self.id = id
         self.uid = uid
         self.name = name 
