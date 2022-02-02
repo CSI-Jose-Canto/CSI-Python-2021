@@ -27,3 +27,35 @@ print(f"male_first_name: {name.male_first_name}")
 print(f"female_first_name: {name.female_first_name}")
 print(f"prefix: {name.prefix}")
 print(f"initials: {name.initials}")
+
+# Directory
+directory = "Responses"
+parent_dir = "D:/Pycharm projects/"
+  
+# Path
+myPath = os.path.join(parent_dir, directory)
+  
+# Create the directory
+# 'Responses' in
+# '/home / User / Documents'
+os.mkdir(myPath)
+print("Directory '% s' created" % directory)
+  
+# Directory
+directory = "Responses"
+  
+# Parent Directory path
+parent_dir = "D:/Pycharm projects"
+  
+# mode
+mode = 0o666
+  
+# Path
+path = os.path.join(parent_dir, directory)
+  
+# Create the directory
+# 'Responses' in
+# '/home / User / Documents'
+# with mode 0o666
+os.mkdir(path, mode)
+print("Directory '% s' created" % directory)
