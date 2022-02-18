@@ -2,11 +2,11 @@ import random
 
 print("Welcome to Hang Man!")
 
-wordList = ["Celtics", "Bulls", "Cavs", "Bucks", "Mavericks", "Warriors", "Lakers", "Spurs", "Sixers", "Clippers", "Pistons", "Kings", "Nuggets", "Timber Wolves", "Suns", "Nets", "Rockets", "Heat", "Jazz", "Hawks"]
+wordList = ["CELTICS", "BULLS", "CAVS", "BUCKS", "MAVERICKS", "WARRIORS", "LAKERS", "SPURS", "SIXERS", "CLIPPERS", "PISTONS", "KINGS", "NUGGETS", "HEAT", "SUNS", "NETS", "ROCKETS", "THUNDER", "JAZZ", "HAWKS"]
 computerChoice = random.choice(wordList)
-print(f"Computer selected: {computerChoice}")
 
-(len(computerChoice)*"_ ")
+print("Computer selected: " + computerChoice)
+print(len(computerChoice)*"_ ")
 
 steps = ["""
       _______
@@ -94,16 +94,18 @@ steps = ["""
 posibleLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", 'X', "Y", "Z"]
 
 def getInput():
-    Letter = input("Choose Letter")
-
-    while(Letter.upper() not in posibleLetters):
+     Letter = input("Choose Letter")
+     while(Letter.upper() not in posibleLetters):
         print("Error")
         Letter = input("Choose Letter")        
-    return Letter
-
-
-
-
-
+     return Letter
 
 print(getInput())
+
+# def printWord(...)
+#      Temp: Str=""
+#      len(word)
+#      for[Letter in word]
+
+#      for(incorrect)
+     
