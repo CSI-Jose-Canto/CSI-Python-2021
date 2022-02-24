@@ -1,12 +1,6 @@
+from argparse import _AppendAction, _AppendConstAction
 import random
 
-print("Welcome to Hang Man!")
-
-wordList = ["CELTICS", "BULLS", "CAVS", "BUCKS", "MAVERICKS", "WARRIORS", "LAKERS", "SPURS", "SIXERS", "CLIPPERS", "PISTONS", "KINGS", "NUGGETS", "HEAT", "SUNS", "NETS", "ROCKETS", "THUNDER", "JAZZ", "HAWKS"]
-computerChoice = random.choice(wordList)
-
-print("Computer selected: " + computerChoice)
-print(len(computerChoice)*"_ ")
 
 steps = ["""
       _______
@@ -90,12 +84,17 @@ steps = ["""
 """,
 
 ]
+wordList = ["CELTICS", "BULLS", "CAVS", "BUCKS", "MAVERICKS", "WARRIORS", "LAKERS", "SPURS", "SIXERS", "CLIPPERS", "PISTONS", "KINGS", "NUGGETS", "HEAT", "SUNS", "NETS", "ROCKETS", "THUNDER", "JAZZ", "HAWKS"]
 
-def get_word(computerChoice):
+def get_word():
      computerChoice = random.choice(wordList)
      return computerChoice.upper()
 
+myWord = get_word()
+
 posibleLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", 'X', "Y", "Z"]
+
+usedLetters = []
 
 def getInput():
      Letter = input("Choose Letter")
@@ -104,11 +103,36 @@ def getInput():
         Letter = input("Choose Letter")        
      return Letter
 
-# def printWord(computerChoice):
-#      Temp: str=""
-#      len(computerChoice)
-#      for Letter in computerChoice:
-#           for(incorrect, or )
+print("Welcome to Hang Man!")
+
+print("Computer selected: " + myWord)
+print(len(myWord)*"_ ")
+
+def getGuess():
+     while True:
+          print('Guess a letter.')
+          guess = input()
+          guess = guess.upper()
+          if len(guess) != 1:
+            print('Please enter a single letter.')
+          elif guess in usedLetters:
+               print('You have already guessed that letter. Choose again.')
+          elif guess not in 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z':
+               print('Please enter a LETTER.')
+          else:
+               usedLetters.add(guess)
+               return guess
+
+def printWord(computerChoice):
+     temp: str=""
+     len(computerChoice)
+     for Letter in myWord:
+          if Letter in usedLetters:
+               temp+=Letter
+          else:
+               temp+="_"
+
+     print(temp)
 
 # def play(computerChoice):
 #    word_completion = "_ "* len(computerChoice)
