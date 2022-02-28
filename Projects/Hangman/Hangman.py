@@ -10,7 +10,7 @@ HangManArt = [
      |      
      |
      |___
-"""
+""",
 """  _______
      |/      |
      |      
@@ -91,20 +91,19 @@ def get_Word(wordList):
      wordIndex = random.randint(0, len(wordList) - 1)
      return wordList[wordIndex]
 
-def display(missedLetters, correctLetters, compWord):
-     print(HangManArt[len(missedLetters)])
-     print()
-
+def display(missedLetters, correctLetters, compWord):       #This will display the users data 
+     print(HangManArt[len(missedLetters)])                  #(guessed letters aswell as the word he is guessing)
+                                            
      print("Used letters:", end=" ")
      for letter in usedLetters:
-         print(letter, end=' ')
+         print(letter, end=" ")
      print()
 
-     blanks = "_" * len(compWord)
+     blanks = "_" * len(compWord)       #This makes it so that there are equal amounts of blanks as their are letters in the word
 
      for i in range(len(compWord)): # Replace blanks with correctly guessed letters.
         if compWord[i] in correctLetters:
-             blanks = blanks[:i] + compWord[i] + blanks[i+1:]
+             blanks = blanks[:i] + compWord[i] + blanks[i+1:]    #the letter will be substituted in the blank
 
      for letter in blanks:          # Show the word with spaces in between each letter.
          print(letter, end=" ")
@@ -115,8 +114,8 @@ def getGuess(alreadyGuessed):
      while True:
          print("Guess a letter.")
          guess = input()
-         guess = guess.upper()
-         if len(guess) != 1:
+         guess = guess.upper()                         #This is the filter for the input
+         if len(guess) != 1:                           #this will make sure that only the accepted asnweres go through
              print("Please enter ONE (1), letter.")
          elif guess in alreadyGuessed:
              print("You have already guessed that letter. Choose another one.")
@@ -134,7 +133,7 @@ def playAgain():
 print("Hang Man!!")
 usedLetters = " "
 correctLetters = " "
-compWord = get_Word(words)
+compWord = get_Word(words)         #compWord is the randomly selected string
 gameIsDone = False
 
 while True:
@@ -148,7 +147,7 @@ while True:
          foundAllLetters = True
          for i in range(len(compWord)):
              if compWord[i] not in correctLetters:
-                 foundAllLetters = False   #No se como hacer que print "Game Over"
+                 foundAllLetters = False
                  break
          if foundAllLetters:
              print('CORRECT! The word is "' + compWord +
@@ -161,8 +160,8 @@ while True:
          if len(usedLetters) == len(HangManArt) - 1:
              display(usedLetters, correctLetters, compWord)
              print("You ran out of guesses!\nAfter " +
-                   str(len(usedLetters)) + "wrong guesses and " +
-                   str(len(correctLetters)) + "correct guesses",
+                   str(len(usedLetters)) + " wrong guesses and " +     #If the player has lost this will print
+                   str(len(correctLetters)) + " correct guesses",
                    "the word was " + compWord + "")
              gameIsDone = True
 
@@ -174,4 +173,5 @@ while True:
              gameIsDone = False
              compWord = get_Word(words)
          else:
+            print("Game Over")     #Prints game over if the return when asked if "you want to restart the game" is not YES
             break
