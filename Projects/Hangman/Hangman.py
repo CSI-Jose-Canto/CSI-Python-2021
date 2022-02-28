@@ -2,6 +2,24 @@ import random
 
 
 HangManArt = [
+"""  _______
+     |/      |
+     |      
+     |      
+     |       
+     |      
+     |
+     |___
+"""
+"""  _______
+     |/      |
+     |      
+     |      
+     |       
+     |      
+     |
+     |___
+""",
 """
   _______
      |/      |
@@ -120,9 +138,7 @@ compWord = get_Word(words)
 gameIsDone = False
 
 while True:
-     display(usedLetters, correctLetters, compWord)
-
-     # This will let the player enter a letter, the letter is the imput.
+     display(usedLetters, correctLetters, compWord) #This will show the user what letter he has used
      guess = getGuess(usedLetters + correctLetters)
 
      if guess in compWord:
