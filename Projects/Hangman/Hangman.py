@@ -157,7 +157,7 @@ while True:
              gameIsDone = True               #This makes it so that the game is done, so that the user will be asked to play again
 
      # Ask the player if they want to play again (but only if the game is done).
-     if gameIsDone:                
+     if gameIsDone:                #The code above will make sure that gameIsDone is true so that this code will strat
          if playAgain():
              wrongLetters = ""
              correctLetters = ""
