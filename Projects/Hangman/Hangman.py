@@ -1,17 +1,8 @@
 import random
 
 
-HangManArt = [
-"""  _______
-     |/      |
-     |      
-     |      
-     |       
-     |      
-     |
-     |___
-""",
-"""  _______
+Steps = [
+"""   _______
      |/      |
      |      
      |      
@@ -21,7 +12,7 @@ HangManArt = [
      |___
 """,
 """
-  _______
+      _______
      |/      |
      |      (_)
      |      
@@ -32,7 +23,7 @@ HangManArt = [
 """,
 
 """
-  _______
+      _______
      |/      |
      |      (_)
      |       |
@@ -42,7 +33,7 @@ HangManArt = [
      |___
 """,
 """
-  _______
+      _______
      |/      |
      |      (_)
      |      \|
@@ -52,7 +43,7 @@ HangManArt = [
      |___
 """,
 """
-  _______
+      _______
      |/      |
      |      (_)
      |      \|/
@@ -62,7 +53,7 @@ HangManArt = [
      |___
 """,
 """
-  _______
+      _______
      |/      |
      |      (_)
      |      \|/
@@ -72,7 +63,7 @@ HangManArt = [
      |___
 """,
 """
-  _______
+     _______
      |/      |
      |      (_)
      |      \|/
@@ -92,10 +83,10 @@ def get_Word(wordList):
      return wordList[wordIndex]
 
 def display(missedLetters, correctLetters, compWord):       #This will display the users data 
-     print(HangManArt[len(missedLetters)])                  #(guessed letters aswell as the word he is guessing)
+     print(Steps[len(missedLetters)-1])                  #(guessed letters aswell as the word he is guessing)
                                             
-     print("Used letters:", end=" ")
-     for letter in usedLetters:
+     print("Used letters:", end=" ")         #add a space after each letter in the wrong guesses
+     for letter in wrongLetters:
          print(letter, end=" ")
      print()
 
@@ -131,44 +122,44 @@ def playAgain():
      return input().upper().startswith("Y")
 
 print("Hang Man!!")
-usedLetters = " "
+wrongLetters = " "
 correctLetters = " "
 compWord = get_Word(words)         #compWord is the randomly selected string
 gameIsDone = False
 
 while True:
-     display(usedLetters, correctLetters, compWord) #This will show the user what letter he has used
-     guess = getGuess(usedLetters + correctLetters)
+     display(wrongLetters, correctLetters, compWord) #This will show the user what letter he has used
+     guess = getGuess(wrongLetters + correctLetters)
 
-     if guess in compWord:
+     if guess in compWord:                        #If the guess is in the random word then the gue sis a correct letter
          correctLetters = correctLetters + guess
 
          # This will check if the player has won.
          foundAllLetters = True
          for i in range(len(compWord)):
-             if compWord[i] not in correctLetters:
-                 foundAllLetters = False
-                 break
+             if compWord[i] not in correctLetters:     
+                 foundAllLetters = False          #this will loop everytime the user guesses a letter until he finds the word,
+                 break                            #or runs out of lives
          if foundAllLetters:
-             print('CORRECT! The word is "' + compWord +
-                   '"You have won!!')
-             gameIsDone = True
-     else:
-         usedLetters = usedLetters + guess
+             print("CORRECT! The word is " + compWord +
+                   "You have won!!")            #if the player has found all the letters the game will end
+             gameIsDone = True               #This code makes it so that if the user finds all the letters the game will be done
+     else:                                   #making sure the game is done will then be used
+         wrongLetters = wrongLetters + guess
 
          # Check if player has guessed too many times and lost.
-         if len(usedLetters) == len(HangManArt) - 1:
-             display(usedLetters, correctLetters, compWord)
-             print("You ran out of guesses!\nAfter " +
-                   str(len(usedLetters)) + " wrong guesses and " +     #If the player has lost this will print
+         if len(wrongLetters) == len(Steps) - 1:
+             display(wrongLetters, correctLetters, compWord)
+             print("You ran out of guesses!\nAfter " +                
+                   str(len(wrongLetters)) + " wrong guesses and " +     #If the player has lost this will print
                    str(len(correctLetters)) + " correct guesses",
                    "the word was " + compWord + "")
-             gameIsDone = True
+             gameIsDone = True               #This makes it so that the game is done, so that the user will be asked to play again
 
      # Ask the player if they want to play again (but only if the game is done).
-     if gameIsDone:
+     if gameIsDone:                
          if playAgain():
-             usedLetters = ""
+             wrongLetters = ""
              correctLetters = ""
              gameIsDone = False
              compWord = get_Word(words)
