@@ -103,7 +103,7 @@ def display(missedLetters, correctLetters, compWord):       #This will display t
 def getGuess(alreadyGuessed):
                                    # Returns the letter the player entered. This function makes sure the player entered a single letter and not something else.
      while True:
-         print("Guess a letter.")
+         print("Guess a letter. Hint: NBA Teams")
          guess = input()
          guess = guess.upper()                         #This is the filter for the input
          if len(guess) != 1:                           #this will make sure that only the accepted asnweres go through
@@ -142,7 +142,7 @@ while True:
                  break                            #or runs out of lives
          if foundAllLetters:
              print("CORRECT! The word is " + compWord +
-                   "You have won!!")            #if the player has found all the letters the game will end
+                   " You have won!!")            #if the player has found all the letters the game will end
              gameIsDone = True               #This code makes it so that if the user finds all the letters the game will be done
      else:                                   #making sure the game is done will then be used
          wrongLetters = wrongLetters + guess
@@ -159,7 +159,7 @@ while True:
      # Ask the player if they want to play again (but only if the game is done).
      if gameIsDone:                #The code above will make sure that gameIsDone is true so that this code will strat
          if playAgain():
-             wrongLetters = ""
+             wrongLetters = ""          #If the play again is true (answered YES) the code will run and re-start the game
              correctLetters = ""
              gameIsDone = False
              compWord = get_Word(words)
