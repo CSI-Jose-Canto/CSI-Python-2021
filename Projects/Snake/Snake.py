@@ -47,6 +47,10 @@ snake_speed = 15
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
+def Your_score(score):      #Creates a score for the user
+    value = score_font.render("Your Score: " + str(score), True, yellow)
+    dis.blit(value, [0, 0])
+
 def our_snake(snake_block, snake_list):
     for x in snake_list:
         pygame.draw.rect(dis, black, [x[0], x[1], snake_block, snake_block])
@@ -121,7 +125,7 @@ def gameLoop():  # creating a function
                         game_close = True
     
             our_snake(snake_block, snake_List)
-    
+            Your_score(Length_of_snake - 1) #the score will be the length of the snake minus 1
     
             pygame.display.update()
     
@@ -135,4 +139,4 @@ def gameLoop():  # creating a function
         pygame.quit()
         quit()
 
- gameLoop()
+gameLoop()
