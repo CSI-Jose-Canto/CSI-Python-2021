@@ -99,11 +99,13 @@ def gameLoop():  # creating a function
     x1 += x1_change
     y1 += y1_change
     dis.fill(white)
-    pygame.draw.rect(dis, black, [x1, y1, 10, 10])      #this will make the snake
+    pygame.draw.rect(dis, blue, [foodx, foody, snake_block, snake_block])       #Draws the snake food
+    pygame.draw.rect(dis, black, [x1, y1, snake_block, snake_block])            #Draws the snake
+    pygame.display.update()
  
-    pygame.display.update()     #updates display
- 
-    clock.tick(30)          #It will compute how many milliseconds have passed since the previous call
+    if x1 == foodx and y1 == foody:
+            print("Yummy!!")
+    clock.tick(snake_speed)
 
 message("You lost",red)
 pygame.display.update()
