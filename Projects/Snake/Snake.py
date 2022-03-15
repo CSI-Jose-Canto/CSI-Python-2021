@@ -21,56 +21,80 @@
 # quit()          #The game will quit
 
 import pygame   #imports the game
+import time     #imports time
+import random   #imports random
  
 pygame.init()      #Starts game
  
 white = (255, 255, 255)     #Sets the colors
 black = (0, 0, 0)
 red = (255, 0, 0)
+blue = (0, 0, 255)
 
 dis_width = 800     #sets the size 
 dis_height  = 600 
+
 dis = pygame.display.set_mode((800, 600))       #sets the display's mode
 pygame.display.set_caption('Snake Game by Canto')     #Adds to the display
- 
-game_over = False       #states the game_over as false so that the code continues
- 
-x1 = dis_width/2        #Changes the start of the snake
-y1 = dis_height/2   
- 
-snake_block=10 #size of snake block
 
-x1_change = 0       #holds the change in x
-y1_change = 0       #holds the change in y
- 
 clock = pygame.time.Clock()
-snake_speed=30          #sets speed of snack
-
-font_style = pygame.font.SysFont(None, 50)  #Sets the font for the game
  
-def message(msg,color):             #defines "message" with the ms and its color.
+snake_block = 10
+snake_speed = 30
+ 
+font_style = pygame.font.SysFont(None, 30)
+ 
+ 
+def message(msg, color):
     mesg = font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width/2, dis_height/2])
+    dis.blit(mesg, [dis_width/3, dis_height/3])
  
-while not game_over:
-    for event in pygame.event.get():        #This loop will "read" the comands made by the user such as up down...
-        if event.type == pygame.QUIT:
+ 
+def gameLoop():  # creating a function
+    game_over = False       #Keeps the game from stopping
+    game_close = False
+ 
+    x1 = dis_width / 2
+    y1 = dis_height / 2
+ 
+    x1_change = 0
+    y1_change = 0
+ 
+    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+    foody = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
+
+    while not game_over:
+        while game_close == True:       #Once the game is over the rest of the string will run
+            dis.fill(white)
+            message("You Lost! Press Q-Quit or C-Play Again", red)
+            pygame.display.update()
+ 
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:    
+                    if event.key == pygame.K_q: 
+                        game_over = True        
+                        game_close = False
+                    if event.key == pygame.K_c:
+                        gameLoop()                  #Re-starts the game
+ 
+        for event in pygame.event.get():        #Sets the controls for the game using the arrows
+            if event.type == pygame.QUIT:
+                game_over = True
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    x1_change = -snake_block
+                    y1_change = 0
+                elif event.key == pygame.K_RIGHT:
+                    x1_change = snake_block
+                    y1_change = 0
+                elif event.key == pygame.K_UP:
+                    y1_change = -snake_block
+                    x1_change = 0
+                elif event.key == pygame.K_DOWN:
+                    y1_change = snake_block
+                    x1_change = 0
+        if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
             game_over = True
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                x1_change = -10
-                y1_change = 0
-            elif event.key == pygame.K_RIGHT:
-                x1_change = 10
-                y1_change = 0
-            elif event.key == pygame.K_UP:
-                y1_change = -10
-                x1_change = 0
-            elif event.key == pygame.K_DOWN:
-                y1_change = 10
-                x1_change = 0
-    if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
-        game_over = True
  
     x1 += x1_change
     y1 += y1_change
